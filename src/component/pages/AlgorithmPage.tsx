@@ -250,13 +250,7 @@ const AlgorithmPage = () => {
     }
     return (
         <div>
-            <ul style={{
-                marginTop: 50,
-                marginLeft: 50,
-                display: "flex",
-                flexDirection: "column",
-
-            }}>
+            <ul>
                 <li
                     onClick={() => question1("cvsgiorszzzmrpaqpe", [16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7])}>문제 1
                 </li>
