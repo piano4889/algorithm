@@ -19,10 +19,34 @@ const AlgorithmPage2 = () => {
 
         console.log(result);
     }
+    const question2 = (n: number, k: number) => {
+        // const answer = [];
+        // for (let i = 1; i <= n; i++) {
+        //     if(i % k === 0 ){
+        //         answer.push(i);
+        //     }
+        // }
+        // return answer.sort((a, b) => a - b);
+        return [...Array(n)].map((_, i) => i + 1)
+            .filter(i => i % k === 0)
+            .sort((a, b) => a - b);
+    }
+    const question3 = (my_string: string, indices: number[]) => {
+        const arr = my_string.split('')
+            .filter((_, i) => !indices.includes(i))
+            .join('');
+    }
+    const question4 = (start: number, end_num: number) => {
+        const arr = [...Array((start - end_num) + 1)].map((_, i) => start - i);
 
+        console.log(arr);
+    }
     return (
         <ul>
             <li onClick={() => question1("Programmers")}>문제1</li>
+            <li onClick={() => question2(10, 3)}>문제2</li>
+            <li onClick={() => question3("apporoograpemmemprs", [1, 16, 6, 15, 0, 10, 11, 3])}>문제3</li>
+            <li onClick={() => question4(10, 3)}>문제4</li>
         </ul>
     );
 };
