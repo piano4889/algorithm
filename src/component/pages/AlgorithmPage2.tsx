@@ -38,8 +38,22 @@ const AlgorithmPage2 = () => {
     }
     const question4 = (start: number, end_num: number) => {
         const arr = [...Array((start - end_num) + 1)].map((_, i) => start - i);
-
         console.log(arr);
+    }
+    const question5 = (arr: number[], idx: number) => {
+        let answer = -1;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 1 && idx <= i) {
+                answer = i;
+                break; // 가장 작은 인덱스를 찾았으면 더 이상 검사할 필요가 없음
+            }
+        }
+
+        console.log(answer);
+
+        return answer;
+
     }
     return (
         <ul>
@@ -47,6 +61,7 @@ const AlgorithmPage2 = () => {
             <li onClick={() => question2(10, 3)}>문제2</li>
             <li onClick={() => question3("apporoograpemmemprs", [1, 16, 6, 15, 0, 10, 11, 3])}>문제3</li>
             <li onClick={() => question4(10, 3)}>문제4</li>
+            <li onClick={() => question5([1, 1, 1, 1, 0]	, 3)}>문제5</li>
         </ul>
     );
 };
